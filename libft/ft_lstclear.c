@@ -26,3 +26,19 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		}
 	}
 }
+/*
+void	wrapper_del(void *content)
+{
+	(void)content;
+}
+
+int	main(void)
+{
+	t_list *list = NULL;
+
+	ft_lstclear(&list, &wrapper_del);
+
+	printf("Lista liberada correctamente.\n");
+
+	return (0);
+}*/
