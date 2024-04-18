@@ -38,3 +38,26 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ret = ft_substr(start, 0, end - start);
 	return (ret);
 }
+/*
+int	main(void)
+{
+	char const *s1 = "  \t\t Hello, World! \t\t  ";
+	char const *set = " \t";
+
+	char *trimmed_str = ft_strtrim(s1, set);
+	if (trimmed_str)
+	{
+		printf("Cadena original: \"%s\"\n", s1);
+		printf("Conjunto de caracteres a eliminar: \"%s\"\n", set);
+		printf("Cadena después de eliminar caracteres de inicio y fin: \"%s\"\n",
+			trimmed_str);
+
+		free(trimmed_str);
+	}
+	else
+	{
+		printf("La función ft_strtrim devolvió NULL.\n");
+	}
+
+	return (0);
+}*/
