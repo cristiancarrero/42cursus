@@ -20,3 +20,22 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	free(lst);
 	lst = NULL;
 }
+/*
+void	free_content(void *content)
+{
+	free(content);
+}
+
+int	main(void)
+{
+	t_list	*node = ft_lstnew(ft_strdup("Hello, world!"));
+
+	printf("Antes de eliminar el nodo:\n");
+	printf("Contenido del nodo: %s\n", (char *)node->content);
+
+	ft_lstdelone(node, &free_content);
+
+	printf("\nEl nodo ha sido eliminado.\n");
+
+	return (0);
+}*/
