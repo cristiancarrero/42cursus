@@ -22,3 +22,14 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		lst = lst->next;
 	}
 }
+/*
+int main(void)
+{
+	t_list *list = ft_lstnew("First");
+	ft_lstadd_back(&list, ft_lstnew("Second"));
+	ft_lstadd_back(&list, ft_lstnew("Third"));
+
+	ft_lstiter(list, &print_content);
+
+	return 0;
+}*/
