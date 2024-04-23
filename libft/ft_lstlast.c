@@ -20,3 +20,21 @@ t_list	*ft_lstlast(t_list *lst)
 		lst = lst->next;
 	return (lst);
 }
+/*
+int main(void)
+{
+	t_list *list = NULL;
+
+	ft_lstadd_back(&list, ft_lstnew("First"));
+	ft_lstadd_back(&list, ft_lstnew("Second"));
+	ft_lstadd_back(&list, ft_lstnew("Third"));
+
+	t_list *last = ft_lstlast(list);
+
+	if (last)
+		printf("El último elemento de la lista es: %s\n", (char *)last->content);
+	else
+		printf("La lista está vacía\n");
+
+	return 0;
+}*/
