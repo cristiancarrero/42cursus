@@ -39,3 +39,61 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_lst);
 }
+/*
+void *f(void *first_character)
+{
+    ((char *)first_character)[0] = 'w';
+    return first_character;
+}
+
+// Función para eliminar el contenido de un nodo
+void del(void *content)
+{
+    printf("del - %s\n", (char *)content);
+    free(content);
+}
+
+int main(void)
+{
+    t_list *list;
+    t_list *lst0;
+    t_list *lst1;
+    char *a1;
+    int size_of_list = 2;
+
+    a1 = malloc(sizeof(char) * 6);
+    ft_strlcpy(a1, "word1", 6);
+    list = ft_lstnew(a1);
+
+    lst0 = list;
+
+    while (size_of_list <= 4)
+    {
+        a1 = malloc(sizeof(char) * 6);
+        ft_strlcpy(a1, "word", 6);
+        a1[4] = size_of_list + '0';
+        lst1 = ft_lstnew(a1);
+        ft_lstadd_back(&list, lst1);
+        size_of_list++;
+    }
+
+    t_list *duplicated_list = ft_lstmap(list, f, del);
+
+    printf("Lista original:\n");
+    while (lst0)
+    {
+        printf("%s\n", (char *)lst0->content);
+        lst0 = lst0->next;
+    }
+
+    printf("\nLista duplicada:\n");
+    while (duplicated_list)
+    {
+        printf("%s\n", (char *)duplicated_list->content);
+        duplicated_list = duplicated_list->next;
+    }
+
+    ft_lstclear(&list, del);
+
+    return 0;
+}*/
