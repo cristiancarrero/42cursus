@@ -27,3 +27,18 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (str);
 }
+/*
+int main(void)
+{
+    const char *str = "Hello, world!";
+    int c = 'o';
+
+    char *result = ft_strchr(str, c);
+
+    if (result != NULL)
+        printf("Caracter '%c' encontrado en la posición: %ld\n", c, result - str);
+    else
+        printf("Caracter '%c' no encontrado en la cadena.\n", c);
+
+    return 0;
+}*/
