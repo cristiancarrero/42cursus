@@ -20,3 +20,14 @@ void	ft_putendl_fd(char *s, int fd)
 		ft_putchar_fd('\n', fd);
 	}
 }
+/*
+int main(void)
+{
+    ft_putendl_fd("Hola Mundo", 1);
+
+    ft_putendl_fd("12345", 1);
+
+    ft_putendl_fd("¡Funciona!", 1);
+
+    return 0;
+}*/
