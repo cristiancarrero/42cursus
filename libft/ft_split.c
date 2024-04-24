@@ -92,3 +92,33 @@ char	**ft_split(char const *s, char c)
 	array = split(s, c, array, words);
 	return (array);
 }
+/*
+int main(void)
+{
+    char *str = "Hello,world,this,is,a,test";
+    char **splitted = ft_split(str, ',');
+
+    if (splitted)
+    {
+        int i = 0;
+        while (splitted[i])
+        {
+            printf("Word %d: %s\n", i + 1, splitted[i]);
+            i++;
+        }
+
+        i = 0;
+        while (splitted[i])
+        {
+            free(splitted[i]);
+            i++;
+        }
+        free(splitted);
+    }
+    else
+    {
+        printf("Error al dividir la cadena.\n");
+    }
+
+    return 0;
+}*/
