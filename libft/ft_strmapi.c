@@ -34,3 +34,28 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	result[i] = '\0';
 	return (result);
 }
+/*
+char toupper_wrapper(unsigned int index, char c)
+{
+    (void)index;
+    if (c >= 'a' && c <= 'z')
+        return c - 32;
+    return c;
+}
+
+int main(void)
+{
+    char *str = "hello world";
+    char *result = ft_strmapi(str, toupper_wrapper);
+    if (result)
+    {
+        printf("Original: %s\n", str);
+        printf("Modified: %s\n", result);
+        free(result);
+    }
+    else
+    {
+        printf("Error: No se pudo aplicar la función ft_strmapi.\n");
+    }
+    return 0;
+}*/
