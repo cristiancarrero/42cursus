@@ -30,3 +30,23 @@ char	*ft_strdup(const char *str)
 	dest[i] = '\0';
 	return (dest);
 }
+/*
+int main(void)
+{
+    const char *original = "Hello, world!";
+    char *duplicate = ft_strdup(original);
+
+    if (duplicate)
+    {
+        printf("Original string: %s\n", original);
+        printf("Duplicate string: %s\n", duplicate);
+
+        free(duplicate);
+    }
+    else
+    {
+        printf("Error: No se pudo duplicar la cadena.\n");
+    }
+
+    return 0;
+}*/
