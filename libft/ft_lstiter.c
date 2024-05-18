@@ -23,6 +23,11 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	}
 }
 /*
+void	print_content(void *content)
+{
+	printf("%s\n", (char *)content);
+}
+
 int main(void)
 {
 	t_list *list = ft_lstnew("First");
