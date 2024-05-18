@@ -41,42 +41,35 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	return (new_lst);
 }
 /*
-// Función para duplicar el contenido de un nodo
 void *duplicate_content(void *content)
 {
-    // Supongamos que el contenido es una cadena de caracteres
-    char *original = (char *)content;
-    char *duplicate = ft_strdup(original);
-    return (void *)duplicate;
+    return ft_strdup((char *)content);
 }
 
-// Función para liberar la memoria del contenido de un nodo
 void free_content(void *content)
 {
     free(content);
 }
 
+void print_content2(void *content)
+{
+    printf("%s\n", (char *)content);
+}
+
 int main(void)
 {
-    // Crear una lista inicial con algunos elementos
-    t_list *list = ft_lstnew("First");
-    ft_lstadd_back(&list, ft_lstnew("Second"));
-    ft_lstadd_back(&list, ft_lstnew("Third"));
+    t_list *list = ft_lstnew(ft_strdup("First"));
 
-    // Aplicar la función ft_lstmap para duplicar la lista
-    t_list *duplicated_list = ft_lstmap(list, &duplicate_content, &free_content);
+    t_list *duplicated_list = ft_lstmap(list, duplicate_content, free_content);
 
-    // Imprimir la lista duplicada
     printf("Lista original:\n");
-    ft_lstiter(list, &print_content);
+    ft_lstiter(list, print_content2);
 
-    printf("\nLista duplicada:\n");
-    ft_lstiter(duplicated_list, &print_content);
+    printf("Lista duplicada:\n");
+    ft_lstiter(duplicated_list, print_content2);
 
-    // Liberar la memoria de ambas listas
-    ft_lstclear(&list, &free_content);
-    ft_lstclear(&duplicated_list, &free_content);
+    ft_lstclear(&list, free_content);
+    ft_lstclear(&duplicated_list, free_content);
 
     return 0;
-}
-*/
+}*/
