@@ -53,7 +53,7 @@ static void	free_array(size_t i, char **array)
 	free(array);
 }
 
-static char	**split(char const *s, char c, char **array, size_t words_count)
+static char	**split2(char const *s, char c, char **array, size_t words_count)
 {
 	size_t	i;
 	size_t	j;
@@ -89,7 +89,7 @@ char	**ft_split(char const *s, char c)
 	array = (char **)malloc(sizeof(char *) * (words + 1));
 	if (!array)
 		return (NULL);
-	array = split(s, c, array, words);
+	array = split2(s, c, array, words);
 	return (array);
 }
 /*
