@@ -96,4 +96,26 @@ int main(void)
     ft_lstclear(&list, del);
 
     return 0;
-}*/
+}
+
+void print_content(void *content)
+{
+    printf("%s\n", (char *)content);
+}
+
+int main(void)
+{
+    // Crear una lista inicial con algunos elementos
+    t_list *list = ft_lstnew("First");
+    ft_lstadd_back(&list, ft_lstnew("Second"));
+    ft_lstadd_back(&list, ft_lstnew("Third"));
+
+    // Aplicar la función ft_lstiter para imprimir el contenido de cada nodo
+    ft_lstiter(list, &print_content);
+
+    // Liberar la memoria de la lista
+    ft_lstclear(&list, &free);
+
+    return 0;
+}
+*/
