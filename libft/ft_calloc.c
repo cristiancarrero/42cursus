@@ -13,11 +13,16 @@
 #include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
+#include <stdint.h>
+#include <stdint.h>
 
 void	*ft_calloc(size_t n, size_t size)
 {
 	void	*buffer;
 
+	if (size != 0 && n > SIZE_MAX / size)
+		return (NULL);
 	buffer = (void *)malloc(size * n);
 	if (!buffer)
 		return (NULL);
