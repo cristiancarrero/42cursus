@@ -13,32 +13,68 @@
 #include "libft.h"
 #include <stdio.h>
 
+static t_list	*lst_new(void *content)
+{
+	t_list	*new;
+
+	new = (t_list *)malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
+}
+
+static void	lst_clear(t_list **lst, void (*del)(void *))
+{
+	if (!lst || !del || !(*lst))
+		return ;
+	lst_clear(&(*lst)->next, del);
+	(del)((*lst)->content);
+	free(*lst);
+	*lst = NULL;
+}
+
+static void	lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*ptr;
+
+	if (!lst || !new)
+		return ;
+	if (!(*lst))
+	{
+		*lst = new;
+		return ;
+	}
+	ptr = *lst;
+	while (ptr->next)
+		ptr = ptr->next;
+	ptr->next = new;
+}
+
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*new_lst;
-	void	*content;
+	t_list	*new_list;
 	t_list	*new_node;
+	void	*set;
 
-	new_lst = NULL;
+	if (!lst || !f || !del)
+		return (NULL);
+	new_list = NULL;
 	while (lst)
 	{
-		content = f(lst->content);
-		if (!content)
-		{
-			ft_lstclear(&new_lst, del);
-			return (NULL);
-		}
-		new_node = ft_lstnew(content);
+		set = f(lst->content);
+		new_node = lst_new(set);
 		if (!new_node)
 		{
-			ft_lstclear(&new_lst, del);
-			del(content);
-			return (NULL);
+			del(set);
+			lst_clear(&new_list, (*del));
+			return (new_list);
 		}
-		ft_lstadd_back(&new_lst, new_node);
+		lstadd_back(&new_list, new_node);
 		lst = lst->next;
 	}
-	return (new_lst);
+	return (new_list);
 }
 /*
 void *duplicate_content(void *content)
