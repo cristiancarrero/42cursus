@@ -15,6 +15,10 @@
 
 void	ft_putstr_fd(char *str, int fd)
 {
+	if (fd < 0)
+		return ;
+	if (str == NULL)
+		return ;
 	while (str[0] != '\0')
 	{
 		write(fd, str, 1);
